@@ -56,7 +56,7 @@ let content = "";
         <div class="card shadow">
             <div class="card-header d-flex justify-content-between">
 
-            <div onclick="profileClicked1(${item.author.id})" style="width: fit-content;">
+            <div style="cursor: pointer" onclick="profileClicked1(${item.author.id})" style="width: fit-content;">
                 <img class="rounded-circle border border-2" style="width: 40px; height: 40px" src="${users_image}" alt="profile logo">
 
                 <b>@${item.author.username}</b>  
