@@ -63,22 +63,22 @@ function profileClicked() {
 
         content += `
         <h1 class="mb-4">@${post.author.username}'s posts</h1>
-                <div class="card shadow">
+                <div class="card shadow" style="background-color: var(--dark-blue);">
                 <div class="card-header d-flex justify-content-between">
 
                     <div onclick="profileClicked1(${post.author.id})" style="width: fit-content;">
                         <img class="rounded-circle border border-2" style="width: 40px; height: 40px" src="${user_image}" alt="profile logo">
 
-                        <b>@${post.author.username}</b> 
+                        <b style="color: var(--light-blue);">@${post.author.username}</b> 
                     </div>
 
                     <div>${editBtnContent}</div>
                 </div>
-                    <div class="card-body" onclick="postClicked(${post.id})" style="cursor: pointer;">
+                    <div class="card-body" onclick="postClicked(${post.id})" style="cursor: pointer; color: var(--light)">
                     <p class="card-text">${post.body}</p>
                     <img style="border-radius: 5px;" class="w-100" src=${post.image}>
 
-                    <h6 style="color: rgba(59, 57, 57, 0.7);" class="mt-1">${post.created_at}</h6>
+                    <h6 style="color: var(--light);" class="mt-1">${post.created_at}</h6>
         
                     <hr>
         

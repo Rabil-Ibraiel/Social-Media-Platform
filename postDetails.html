@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>FaBook</title>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <style>
+
+        :root {
+            --light: #F1F6F9;
+            --blue: #394867;
+            --dark-blue: #212A3E;
+            --light-blue: #99DBF5;
+        }
+
+        body {
+            background-color: var(--light-blue);
+        }
+
+        a:hover {
+            color: var(--light)!important;
+        }
+
         .card {
             margin-bottom: 30px;
         }
@@ -131,46 +151,50 @@
 <div class="container">
     <div class="d-flex justify-content-center">
         <div class="col-9">
-            <nav class="pt-3 rounded-bottom  shadow p-3 mb-5 bg-body-tertiary rounded navbar navbar-expand-lg bg-body-tertiary">
+            <nav style="background-color: var(--dark-blue) !important" class="pt-3 rounded-bottom  shadow p-3 mb-5 bg-body-tertiary rounded navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="./home.html">Tarmmez</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <a class="navbar-brand fs-2 fw-bold" href="./home.html" style="color: var(--light);">FaBook</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" style="cursor: pointer;" onclick="myProfileClicked()">Profile</a>
-                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./home.html" style="color: var(--light-blue)">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a id="profile" class="nav-link" style="cursor: pointer; color: var(--light-blue)" onclick="myProfileClicked()">Profile</a>
+                      </li>
                     </ul>
 
                     <!-- NOT Loged in users-->
                     <div id="notLoggedIn" class="w-100 d-flex justify-content-end">
-                        <button type="button" class="btn btn-outline-success me-3" data-bs-toggle="modal" id="login-navbar" data-bs-target="#login-modal">Log in</button>
+                        <button type="button" class="btn btn btn-outline-light me-3" data-bs-toggle="modal" id="login-navbar" data-bs-target="#login-modal">Log in</button>
                     
-                        <button type="button" id="register-navbar" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#register-modal">Register</button>
+                        <button type="button" id="register-navbar" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#register-modal">Register</button>
                     </div>
                     <!-- // NOT Loged in users // -->
 
 
                     <!-- Loged in users-->
-                    <div id="logedIn" class="d-none w-100 d-flex justify-content-end align-items-center">
-                        <div id="logedIn_profile">
-                            
-                        </div>
+                    <div style="color: var(--light);" id="logedIn" class="d-none w-100 d-flex justify-content-end align-items-center">
+                        <div style="display: flex; justify-content: space-between; align-items: center;" id="logedIn_profile" >
+                        
                     </div>
                     <!-- // Loged in users // -->
 
-                    </div>
+                  </div>
                 </div>
-                </nav>
+              </nav>
+              <div id="addBtn" style="position: fixed; z-index: 99; bottom: 50px; right: 7rem; ">
+                <button onclick="addBtnClicked()" data-bs-toggle="modal" data-bs-target="#create-post-modal" id="create-post"  class="btn btn-primary d-flex justify-content-center align-items-center bg-primary rounded-5" style="width: 50px; height: 50px; font-size: 30px; padding-bottom: 10px;">+</b>
+              </div>
         </div>
     </div>
 </div>
 <!-- // Nav bar // -->
+
+
 <div class="container">
     <div class=" d-flex justify-content-center">
         <div class="col-9">
@@ -196,12 +220,12 @@
             <div class="modal-body">
             <form>
                 <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">username:</label>
-                <input type="text" autocomplete="off" class="form-control" id="username-input" value="rab">
-                </div>
-                <div class="mb-3">
-                <label for="message-text" class="col-form-label">password:</label>
-                <input type="password" class="form-control" id="password-input" value="123456">
+                    <label for="recipient-name" class="col-form-label">username:</label>
+                    <input type="text" autocomplete="off" class="form-control" id="username-input" value="abcd">
+                    </div>
+                    <div class="mb-3">
+                    <label for="message-text" class="col-form-label">password:</label>
+                    <input type="password" class="form-control" id="password-input" value="123123">
                 </div>
             </form>
             </div>

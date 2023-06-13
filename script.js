@@ -107,8 +107,8 @@ function setupUi() {
     loggedIn.classList.remove("d-none");
     logedIn_profile.innerHTML += `
     <img class="rounded-circle border border-2" style="width: 25px; height: 25px;" src="${image()}">
-    <span class="me-1" style="font-size: 20px">@${name}</span>
-    <button onclick="logout()" type="button" id="logout-navbar" class="btn btn-outline-danger ms-4">Log out</button>
+    <span class="me-2 ms-1" style="font-size: 20px">@${name}</span>
+    <button onclick="logout()" type="button" id="logout-navbar" class="btn btn-danger ms-4">Log out</button>
     `;
     notLoggedIn.classList.add("d-none");
     document.getElementById("addBtn").classList.remove("d-none");
